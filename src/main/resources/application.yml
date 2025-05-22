@@ -6,10 +6,10 @@ server:
 
 spring:
   datasource:
-      url: jdbc:postgresql://localhost:5432/registration
-      username: postgres
-      password: $Mbroba@8247
-      driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/registration
+    username: postgres
+    password: **********
+    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
@@ -20,72 +20,67 @@ spring:
         format_sql: true
     show-sql: true
 
-    mail:
-      host: localhost
-      port: 1025
-      username: eugenius
-      password: eugenius
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: your-email@gmail.com
+    password: your-password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
 
-      properties:
-        mail:
-          smtp:
-            ssl:
-              trust: "*"
-            auth: true
-            starttls:
-              enable: false
-            connectiontimeout: 5000
-            timeout: 3000
-            writetimeout: 5000
-
-## =============================================
-## SERVER CONFIGURATION
-## =============================================
-#server:
-#  error:
-#    # Always show detailed error messages in responses (helpful for debugging)
-#    include-message: always
+# =============================================
+# SERVER CONFIGURATION
+# =============================================
+# server:
+#   error:
+#     # Always show detailed error messages in responses (helpful for debugging)
+#     include-message: always
 #
-#    # Always show data binding errors (e.g., when form validation fails)
-#    include-binding-errors: always
+#     # Always show data binding errors (e.g., when form validation fails)
+#     include-binding-errors: always
 #
-## =============================================
-## SPRING FRAMEWORK CONFIGURATION
-## =============================================
-#spring:
-#  # Database connection settings
-#  datasource:
-#    # Database password (should be set in a secure way)
-#    password:
+# =============================================
+# SPRING FRAMEWORK CONFIGURATION
+# =============================================
+# spring:
+#   # Database connection settings
+#   datasource:
+#     # Database password (should be set in a secure way)
+#     password:
 #
-#    # JDBC connection URL for PostgreSQL database
-#    # - Connects to PostgreSQL on local machine (localhost)
-#    # - Uses port 5432 (default PostgreSQL port)
-#    # - Database name is 'registration'
-#    url: jdbc:postgresql://localhost:5432/registration
+#     # JDBC connection URL for PostgreSQL database
+#     # - Connects to PostgreSQL on local machine (localhost)
+#     # - Uses port 5432 (default PostgreSQL port)
+#     # - Database name is 'registration'
+#     url: jdbc:postgresql://localhost:5432/registration
 #
-#    # Database lastName (should be set in a secure way)
-#    lastName: registration
+#     # Database lastName (should be set in a secure way)
+#     lastName: registration
 #
-#  # JPA (Java Persistence API) configuration
-#  jpa:
-#    # Hibernate specific settings
-#    hibernate:
-#      # Database schema management strategy:
-#      # 'create-drop' = create tables on startup, drop them on shutdown
-#      # WARNING: Only for development! Use 'update' or 'none' in production
-#      ddl-auto: create-drop
+#   # JPA (Java Persistence API) configuration
+#   jpa:
+#     # Hibernate specific settings
+#     hibernate:
+#       # Database schema management strategy:
+#       # 'create-drop' = create tables on startup, drop them on shutdown
+#       # WARNING: Only for development! Use 'update' or 'none' in production
+#       ddl-auto: create-drop
 #
-#    # Additional Hibernate properties
-#    properties:
-#      hibernate:
-#        # SQL dialect for PostgreSQL (tells Hibernate how to generate SQL)
-#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#     # Additional Hibernate properties
+#     properties:
+#       hibernate:
+#         # SQL dialect for PostgreSQL (tells Hibernate how to generate SQL)
+#         dialect: org.hibernate.dialect.PostgreSQLDialect
 #
-#        # Format SQL queries in logs for better readability
-#        format_sql: true
+#         # Format SQL queries in logs for better readability
+#         format_sql: true
 #
-#    # Show all SQL statements in console log (helpful for debugging)
-#    show-sql: true
-
-
+#     # Show all SQL statements in console log (helpful for debugging)
+#     show-sql: true
